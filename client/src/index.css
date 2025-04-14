@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: #1a1a1a;
+    background-image: url('https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  
+  /* Custom slider styling */
+  input[type="range"] {
+    @apply h-2.5 rounded-md bg-amber-50/50 outline-none appearance-none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 rounded-full bg-primary cursor-pointer;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    @apply w-5 h-5 rounded-full bg-primary cursor-pointer border-none;
+  }
+}
+
+@font-face {
+  font-family: 'MedievalSharp';
+  src: url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+  font-display: swap;
+}
+
+.parchment-bg {
+  @apply bg-amber-50;
+  background-image: 
+    linear-gradient(rgba(245, 240, 220, 0.7), rgba(245, 240, 220, 0.7)),
+    url('https://images.unsplash.com/photo-1593220007997-7a1e5fe42a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.font-medieval {
+  font-family: 'MedievalSharp', cursive;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.playstyle-card {
+  @apply transition-transform hover:scale-105;
+}
+
+.dice-btn {
+  @apply transition-transform hover:rotate-12;
+}
+
+.progress-step {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.progress-step.active .step-number {
+  @apply bg-primary text-white;
+}

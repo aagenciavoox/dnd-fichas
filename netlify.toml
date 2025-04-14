@@ -1,0 +1,19 @@
+[build]
+  # Diretório que será publicado
+  publish = "dist"
+  # Comando para construir o projeto
+  command = "bash build-netlify.sh"
+  # Funções serverless ficarão neste diretório
+  functions = "netlify/functions"
+
+# Redirecionamento para a API de personagens
+[[redirects]]
+  from = "/api/characters*"
+  to = "/.netlify/functions/characters"
+  status = 200
+
+# Redirecionamento para SPA (deve ser o último para capturar todas as rotas restantes)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
